@@ -230,7 +230,7 @@ columns_to_delete<-c(columns_to_delete,
 columns_to_delete<-c(columns_to_delete,
                      'annual_inc')
 # - revol_util	- Revolving line utilization rate, or the amount of credit the borrower is using relative to all available revolving credit.
-#total_rev_hi_lim - 	Total revolving high credit/credit limit
+#total_rev_hi_lim - Total revolving high credit/credit limit
 #revol_bal_joint - Sum of revolving credit balance of the co-borrowers, net of duplicate balances
 columns_to_delete<-c(columns_to_delete,
                      'total_rev_hi_lim',
@@ -248,7 +248,7 @@ columns_to_delete<-c(columns_to_delete,
 columns_to_delete<-c(columns_to_delete,
                      'emp_title')
 
-#issue_d is a date when the loan was funded
+#issue_d - is a date when the loan was funded
 columns_to_delete<-c(columns_to_delete,
                      'issue_d')
 
@@ -375,7 +375,7 @@ columns_to_delete<-c(columns_to_delete,
 #columns 61-75
 loans.lng <- melt(cbind(dataLoan[,'loan_status'],(dataLoan[,numeric_cols])[,61:75]), id='loan_status')
 ggplot(aes(x=value, group=loan_status, colour=loan_status), data=loans.lng) + geom_density() + facet_wrap(~variable, scales='free')
-ggsave('loans_5.jpg',height=30, width = 50, dpi=300,limitsize = FALSE)
+ggsave('loans_6.jpg',height=30, width = 50, dpi=300,limitsize = FALSE)
 columns_to_delete<-c(columns_to_delete,
                      'num_rev_accts',
                      'num_sats',
